@@ -15,13 +15,26 @@ class linkedList {
 
  public:
   linkedList() : head(nullptr), tail(nullptr) {}
-  const Node_d* getHead() const { return head; }
-  const Node_d* getTail() const { return tail; }
+  linkedList(const linkedList& other);
+  ~linkedList() { clear(); }
+
+  Node_d* getHead() const { return head; }
+  Node_d* getTail() const { return tail; }
   void setHead(Node_d*& newHead) { head = newHead; }
   void setTail(Node_d*& newTail) { tail = newTail; }
-  void addBeforeNode(Node_d*& curNode, const dtype& elem);
+
+  void addBeforeNode(Node_d* curNode, const dtype& elem);
   void addToHead(const dtype& elem);
-  void addAfterNode(Node_d*& curNode, const dtype& elem);
+  void addAfterNode(Node_d* curNode, const dtype& elem);
+
+  void deleteCurrentNode(Node_d* delNode);
+  void deleteAfterNode(Node_d* curNode);
+  void deleteBeforeNode(Node_d* curNode);
+
   void printList();
+  void clear();
+
+
+  linkedList& operator=(const linkedList& other);
 };
 }  // namespace my_linkedList
