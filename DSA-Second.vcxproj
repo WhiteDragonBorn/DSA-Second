@@ -134,6 +134,7 @@
   <ItemGroup>
     <ClInclude Include="apartment.h" />
     <ClInclude Include="linkedList.h" />
+    <ClInclude Include="node_d.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="data_in.txt" />

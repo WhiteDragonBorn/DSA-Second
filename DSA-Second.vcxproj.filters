@@ -32,6 +32,9 @@
     <ClInclude Include="apartment.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="node_d.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Text Include="data_in.txt" />

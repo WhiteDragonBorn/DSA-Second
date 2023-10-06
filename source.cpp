@@ -26,20 +26,17 @@ int main() {
         my_apartment::apartment Test(temp_vec[0], temp_vec[1], temp_vec[2],
                                      temp_vec[3], temp_vec[4], temp_vec[5],
                                      temp_vec[6], temp_vec[7]);
-        my_apartment::apartment Test_2(temp_vec[0], temp_vec[1], temp_vec[2],
-                                       temp_vec[3], temp_vec[4], temp_vec[5],
-                                       temp_vec[6], temp_vec[7] + 1);
+
         temp_vec.clear();
         information.addToHead(Test);
-        information.addAfterNode(information.getTail(), Test_2);
-        information.addBeforeNode(information.getHead(), Test_2);
-        cout << "test";
       }
     }
   } else {
     cout << "Couldn't open the file.";
   }
-
+  cout << information.getHead()->data;
+  cout << information.getTail()->data;
+  cout << endl;
   information.printList();
   // my_apartment::apartment x, y;
 
