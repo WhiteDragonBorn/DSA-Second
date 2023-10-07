@@ -29,6 +29,10 @@ class apartment {
             int people_, int street_, int house_n_, int apart_n_);
   apartment(const apartment& obj);
 
+  int getStreet() const { return address.street; }
+  int getHouse() const { return address.house_number; }
+  int getApartment() const { return address.apart_number; }
+
   bool operator==(const apartment& other) const;
   apartment& operator=(const apartment& other);
   friend std::ostream& operator<<(std::ostream& os, const apartment& obj);

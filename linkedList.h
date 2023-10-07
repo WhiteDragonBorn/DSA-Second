@@ -34,6 +34,10 @@ class linkedList {
   void printList();
   void clear();
 
+  Node_d* searchByStreetAndHouse(int street, int house, Node_d* begin, Node_d* end);
+
+  void deleteApartmentsByStreetAndHouse(int street, int house);
+
 
   linkedList& operator=(const linkedList& other);
 };

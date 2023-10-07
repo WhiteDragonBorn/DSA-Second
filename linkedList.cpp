@@ -127,7 +127,8 @@ void my_linkedList::linkedList::clear() {
   }
 }
 
-my_linkedList::linkedList& my_linkedList::linkedList::operator=(const linkedList& other) {
+my_linkedList::linkedList& my_linkedList::linkedList::operator=(
+    const linkedList& other) {
   clear();
 
   Node_d* p = other.head;
@@ -144,4 +145,38 @@ my_linkedList::linkedList& my_linkedList::linkedList::operator=(const linkedList
   }
   cout << "copy";
   return *this;
+}
+
+Node_d* my_linkedList::linkedList::searchByStreetAndHouse(int street, int house,
+                                                          Node_d* begin,
+                                                          Node_d* end) {
+  Node_d* result = nullptr;
+  if (begin == nullptr || end == nullptr) return result;
+
+  Node_d* temp = begin;
+  while (!result && temp != end->next) {
+    if (temp->data.getStreet() == street && temp->data.getHouse() == house) {
+      result = temp;
+    } else {
+      temp = temp->next;
+    }
+  }
+
+  return result;
+}
+
+void my_linkedList::linkedList::deleteApartmentsByStreetAndHouse(int street,
+                                                                 int house) {
+  Node_d* start = nullptr;
+  start = searchByStreetAndHouse(street, house, head, tail);
+  if (start) {
+    while (start != nullptr && start->data.getHouse() == house &&
+           start->data.getStreet() == street) {
+      Node_d* temp = start->next;
+      deleteCurrentNode(start);
+      start = temp;
+    }
+  } else {
+    cout << "No such apartments." << endl;
+  }
 }

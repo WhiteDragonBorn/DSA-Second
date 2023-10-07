@@ -38,23 +38,31 @@ int main() {
 
   information.printList();
   cout << endl << "------------" << endl;
-  my_apartment::apartment Test(0, 0, 0, 0, 0, 0, 0, 0);
-  // Node_d* thead = information.getHead();
-  information.addBeforeNode(information.getHead(), Test);
-  cout << information.getHead()->data;
-  cout << information.getTail()->data;
-  cout << endl << "------------" << endl;
-  information.printList();
-  information.deleteCurrentNode(information.getHead()->next);
-  // information.deleteAfterNode(information.getHead());
-  // information.deleteBeforeNode(information.getHead()->next);
+
+  information.deleteApartmentsByStreetAndHouse(4, 5);
   information.printList();
   cout << endl << "------------" << endl;
 
-  my_linkedList::linkedList newInformation(information);
-  my_linkedList::linkedList veryNewInformation;
-  veryNewInformation = newInformation;
-  newInformation.printList();
-  veryNewInformation.printList();
+
+  //my_apartment::apartment Test(0, 0, 0, 0, 0, 0, 0, 0);
+  //// Node_d* thead = information.getHead();
+  //information.addBeforeNode(information.getHead(), Test);
+  //cout << information.getHead()->data;
+  //cout << information.getTail()->data;
+  //cout << endl << "------------" << endl;
+  //information.printList();
+  //information.deleteCurrentNode(information.getHead()->next);
+  //// information.deleteAfterNode(information.getHead());
+  //// information.deleteBeforeNode(information.getHead()->next);
+  //information.printList();
+  //cout << endl << "------------" << endl;
+
+  //my_linkedList::linkedList newInformation(information);
+  //my_linkedList::linkedList veryNewInformation;
+  //veryNewInformation = newInformation;
+  //newInformation.printList();
+  //veryNewInformation.printList();
+
+
   FILE_IN.close();
 }
